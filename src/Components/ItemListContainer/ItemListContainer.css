@@ -1,0 +1,6 @@
+.h1Hamburguesa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e40707;
+}
