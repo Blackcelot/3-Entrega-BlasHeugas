@@ -1,33 +1,35 @@
 import { useState, useEffect } from "react";
-import getData, { getCategoryData } from "../Services/AsynMock";
+import {
+  getProductById,
+  getProducts,
+  getProductsByCategory,
+} from "../Services/AsynMock";
 import Item from "../Item/Item";
 import { useParams } from "react-router-dom";
 
-function ItemListContainer() {
-  const [products, setProducts] = useState([]);
-  const { categoryId } = useParams();
+const [products, setProducts] = useState([false]);
+const { categoryId } = useParams();
 
-  async function requestProducts() {
-    let respuesta = categoryId
-      ? await getCategoryData(categoryId)
-      : await getData();
-    setProducts(respuesta);
-  }
+useEffect(() => {
+  const asynFunc = categoryId ? getProductsByCategory : getProducts;
 
-  useEffect(() => {
-    requestProducts();
-  }, []);
+  asynFunc(categoryId)
+    .then((response) => {
+      setProducts(response);
+    })
 
-  return (
+    .catch((error) => {
+      console.error(error);
+    });
+}, [categoryId]);
+
+return (
+  <div>
+    <h1>{greeting}</h1>
     <div>
-      <h1 className="h1 Hamburguesa">¡Hamburguesas!</h1>
-      <div className="flex-container">
-        {products.map((item) => (
-          <Item key={item.id} {...item} />
-        ))}
-      </div>
+      <ItemList products={products} />
     </div>
-  );
-}
+  </div>
+);
 
 export default ItemListContainer;

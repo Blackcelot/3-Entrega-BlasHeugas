@@ -17,7 +17,7 @@ function Item(props) {
         <h4>$ {price}</h4>
         <small>{description}</small>
       </div>
-      <Link to={`/product/${id}`}>
+      <Link to={`/item/${id}`}>
         <ButtonComponent colorFondo=" #cac531">Ver Burger</ButtonComponent>
       </Link>
     </div>

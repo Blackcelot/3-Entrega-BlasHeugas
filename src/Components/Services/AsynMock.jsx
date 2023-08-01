@@ -61,37 +61,28 @@ const productos = [
   },
 ];
 
-function getData() {
-  return new Promise((resolve, reject) => {
+export const getProducts = () => {
+  return new Promise((resolve) => {
     setTimeout(() => {
-      const date = new Date().toLocaleDateString;
-      resolve(productos, date);
-    }, 2000);
+      resolve(products);
+    }, 1000);
   });
-}
+};
 
-export function getProductData(idURL) {
-  return new Promise((resolve, reject) => {
-    const productRequested = productos.find(
-      (item) => item.id === Number(idURL)
-    );
-
+export const getProductById = (productId) => {
+  return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(productRequested);
-    }, 2000);
+      resolve(products.find((product) => product.id === productId));
+    }, 1000);
   });
-}
+};
 
-export function getCategoryData(categoryURL) {
-  return new Promise((resolve, reject) => {
-    const categoryRequested = productos.filter((item) => {
-      return item.category.toLowerCase() === categoryURL.toLowerCase();
-    });
-
+export const getProductsByCategory = (productCategory) => {
+  return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(categoryRequested);
-    }, 2000);
+      resolve(
+        products.filter((product) => product.category === productCategory)
+      );
+    }, 1000);
   });
-}
-
-export default getData;
+};
