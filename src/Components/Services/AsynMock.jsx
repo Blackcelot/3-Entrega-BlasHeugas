@@ -72,7 +72,7 @@ export const getProducts = () => {
 export const getProductById = (productId) => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(products.find((product) => product.id === productId));
+      resolve(products.find((product) => product.id === parseInt(productId)));
     }, 1000);
   });
 };
