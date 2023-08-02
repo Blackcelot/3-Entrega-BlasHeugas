@@ -8,7 +8,6 @@ const CartWidget = () => {
   return (
     <>
       <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon>
-      <span>5</span>
     </>
   );
 };

@@ -1,10 +1,7 @@
 import { Link } from "react-router-dom";
-import ButtonComponent from "../ButtonComponent/ButtonComponent";
 import "./Item.css";
 
-function Item(props) {
-  const { id, title, img, price, description } = props;
-
+const Item = ({ id, title, img, price, description }) => {
   return (
     <div className="item-card">
       <div className="item-card_img">
@@ -17,11 +14,9 @@ function Item(props) {
         <h4>$ {price}</h4>
         <small>{description}</small>
       </div>
-      <Link to={`/item/${id}`}>
-        <ButtonComponent colorFondo=" #cac531">Ver Burger</ButtonComponent>
-      </Link>
+      <Link to={`/item/${id}`}>Ver Detalle</Link>
     </div>
   );
-}
+};
 
 export default Item;

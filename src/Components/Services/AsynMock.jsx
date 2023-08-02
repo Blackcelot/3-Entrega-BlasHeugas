@@ -1,8 +1,8 @@
-const productos = [
+const products = [
   {
     title: "Hamburguesa Clásica",
     id: 1,
-    limit: 5,
+    stock: 5,
     description:
       "Una hamburguesa al estilo tradicional con carne jugosa, queso derretido, lechuga fresca, rodajas de tomate, cebolla y una sabrosa salsa especial. Servida en un pan suave y esponjoso.",
     img: "https://i.pinimg.com/564x/c4/e6/11/c4e611dad9d151787d4a319410757ec9.jpg",
@@ -42,7 +42,7 @@ const productos = [
   {
     title: "BBQ de Costillas",
     id: 5,
-    limit: 5,
+    stock: 5,
     description:
       "Una hamburguesa épica con carne de costillas de cerdo desmenuzadas en una mezcla de salsa barbacoa ahumada y especias. Completada con aros de cebolla crujientes y un toque final de encurtidos de pepinillos.",
     img: "https://i.pinimg.com/564x/f6/2c/71/f62c71b2f6d5fa2d508bbda967e3f752.jpg",

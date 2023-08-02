@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
       .catch((error) => {
         console.error(error);
       });
-  }, [itemID]);
+  }, [itemId]);
 
   return (
     <div>
