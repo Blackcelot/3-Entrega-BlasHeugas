@@ -14,7 +14,9 @@ const Item = ({ id, title, img, price, description }) => {
         <h4>$ {price}</h4>
         <small>{description}</small>
       </div>
-      <Link to={`/item/${id}`}>Ver Detalle</Link>
+      <Link to={`/item/${id}`} className="Detalle">
+        Ver Detalle
+      </Link>
     </div>
   );
 };

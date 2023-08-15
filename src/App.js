@@ -6,22 +6,31 @@ import Conocenos from "./Components/Paginas/Conocenos";
 import Locales from "./Components/Paginas/Locales";
 import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer";
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
+import { createContext } from "react";
+import { CartContextProvider } from "./Components/context/cartContext";
+import CartContainer from "./Components/CartContainer/CartContainer";
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<Inicio />} />
-          <Route path="Hamburguesas" element={<ItemListContainer />} />
-          <Route path="/category/:categoryId" element={<ItemListContainer />} />
-          <Route path="/item/:itemId" element={<ItemDetailContainer />} />
-          <Route path="Conocenos" element={<Conocenos />} />
-          <Route path="Locales" element={<Locales />} />
-          <Route path="*" element={<h1>Page not found: 404</h1>} />
-        </Routes>
-      </BrowserRouter>
+      <CartContextProvider value={{ cart: [] }}>
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Inicio />} />
+            <Route path="Hamburguesas" element={<ItemListContainer />} />
+            <Route
+              path="/category/:categoryId"
+              element={<ItemListContainer />}
+            />
+            <Route path="/item/:itemId" element={<ItemDetailContainer />} />
+            <Route path="Conocenos" element={<Conocenos />} />
+            <Route path="Locales" element={<Locales />} />
+            <Route path="/CartContainer" element={<CartContainer />}></Route>
+            <Route path="*" element={<h1>Page not found: 404</h1>} />
+          </Routes>
+        </BrowserRouter>
+      </CartContextProvider>
     </>
   );
 }

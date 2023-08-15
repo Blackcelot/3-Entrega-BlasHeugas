@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { getProductById } from "../Services/AsynMock";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import { cartContext } from "../../App";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState(null);

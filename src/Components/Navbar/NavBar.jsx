@@ -6,7 +6,7 @@ import CartWidget from "../CartWidget/CartWidget";
 const NavBar = () => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg  ">
+      <nav className="navbar navbar-expand-lg custom-navbar  ">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             BurgerWorld
