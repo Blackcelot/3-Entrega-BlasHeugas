@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { getProductById } from "../Services/AsynMock";
+import { getProductData } from "../Services/firebase";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { cartContext } from "../../App";
@@ -9,7 +9,7 @@ const ItemDetailContainer = () => {
   const { itemId } = useParams();
 
   useEffect(() => {
-    getProductById(itemId)
+    getProductData(itemId)
       .then((response) => {
         setProduct(response);
       })

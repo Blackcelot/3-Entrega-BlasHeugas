@@ -12,10 +12,12 @@ const CartWidget = () => {
   console.log(context);
   return (
     <Link to="/CartContainer" className="iconocarrito">
-      <>
-        <span> {context.cart.length} </span>
-        <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon>
-      </>
+      {context.cart.length > 0 && (
+        <>
+          <span> {context.cart.length} </span>
+          <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon>
+        </>
+      )}
     </Link>
   );
 };
