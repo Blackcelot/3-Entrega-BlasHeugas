@@ -9,6 +9,8 @@ import ItemListContainer from "./Components/ItemListContainer/ItemListContainer"
 import { createContext } from "react";
 import { CartContextProvider } from "./Components/context/cartContext";
 import CartContainer from "./Components/CartContainer/CartContainer";
+import Checkout from "./Components/Checkout/Checkout";
+import OrderConfirm from "./Components/OrderConfirm/OrderConfirm";
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
             <Route path="Conocenos" element={<Conocenos />} />
             <Route path="Locales" element={<Locales />} />
             <Route path="/CartContainer" element={<CartContainer />}></Route>
+            <Route path="Checkout" element={<Checkout />} />
+            <Route path="/order-confirmation/:id" element={<OrderConfirm />} />
             <Route path="*" element={<h1>Page not found: 404</h1>} />
           </Routes>
         </BrowserRouter>

@@ -56,7 +56,7 @@ async function getCategoryData(categoryId) {
 }
 
 async function createOrder(orderData) {
-  const collectionRef = collection(db, "products");
+  const collectionRef = collection(db, "orders");
 
   const docCreated = await addDoc(collectionRef, orderData);
 
